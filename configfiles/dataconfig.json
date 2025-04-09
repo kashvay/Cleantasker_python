@@ -1,0 +1,14 @@
+{
+      "app_url" :"https://portal.cleantasker.com/login"
+  ,
+  "user_logins": [
+    { "username": "demo.admin", "password": "Welcome123$"}
+
+      ],
+  "app_titles": [
+    {"login_title": "CleanTasker: Management Portal",
+    "home_page_title" : "CleanTasker: Management Portal"
+    }
+  ]
+
+}
