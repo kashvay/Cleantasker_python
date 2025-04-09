@@ -35,7 +35,7 @@ def read_user_input():
 
 
 # Fixture for browsers
-@pytest.fixture(params=["chrome"],scope="class")
+@pytest.fixture(params=["chrome","firefox"],scope="class")
 def browser(request):
     return request.param
 
