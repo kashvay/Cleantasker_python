@@ -16,7 +16,7 @@ class Homepage:
         self.client_column_locator = (By.XPATH, "//div[@class='select-options max-md:w-full'][3]")
         self.location_column_locator = (By.XPATH, "//div[@class='select-options max-md:w-full'][4]")
         self.manager_column_locator = (By.XPATH, "//div[@class='select-options max-md:w-full'][5]")
-        self.go_button_locator=(By.XPATH,"//div//button")
+        self.go_button_locator=(By.XPATH,"//form//div//button")
         self.report_section=(By.XPATH,"//h3[text()='Daily Tasks']")
 
 
@@ -91,7 +91,7 @@ class Homepage:
             with allure.step("Screenshot of the dashboard after loaded with selection"):
                 selenium_cmd_helpers.explicit_wait(self.driver, "visibility", self.report_section)
                 selenium_cmd_helpers.explicit_wait(self.driver, "javascript_wait")
-                time.sleep(1)
+                time.sleep(2)
                 selenium_cmd_helpers.take_screenshot(self.driver, "Dashboard_section", browser_name)
 
 
