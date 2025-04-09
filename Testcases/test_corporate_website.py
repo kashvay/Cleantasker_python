@@ -13,9 +13,7 @@ from Utilities.Utils import custom_log
 class BasicTest:
     pass
 
-@allure.feature("Registration")
-@allure.story("Cleantasker portal verification")
-@allure.severity(allure.severity_level.CRITICAL)
+
 class Testcleantasker(BasicTest):
 
 
@@ -27,7 +25,9 @@ class Testcleantasker(BasicTest):
     def test_run_date(self):
         return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    @pytest.mark.skip(reason="no way of currently testing this")
+    @allure.feature("Login page")
+    @allure.story("Login page verification")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_successful_login (self,setup,test_run_date):
         try:
             _,browser_name,url,login_title,home_page_title,login_dict = setup
@@ -40,7 +40,7 @@ class Testcleantasker(BasicTest):
             custom_log().error(f"Unable to launch the application due to error {error}")
             raise error
 
-    @pytest.mark.skip(reason="no way of currently testing this")
+
     def test_failed_login (self,setup,test_run_date):
         try:
             _, browser_name, url, login_title, _, login_dict = setup
@@ -53,7 +53,9 @@ class Testcleantasker(BasicTest):
             custom_log().error("Unable to launch the application")
             raise error
 
-
+    @allure.feature("Home page")
+    @allure.story("Dashboard page verification")
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_home_page(self,setup,test_run_date):
         try:
             _, browser_name, url, login_title, home_page_title, login_dict = setup

@@ -1,3 +1,4 @@
+import time
 import traceback
 
 import allure
@@ -62,7 +63,7 @@ class Loginpage:
                     verify_status,actual_title = selenium_cmd_helpers.verify_title(self.driver, home_page_title, browser_name)
                     if verify_status:
                         with allure.step("customer logged in successfully"):
-                            self.driver.implicitly_wait(20)
+                            time.sleep(2)
                             selenium_cmd_helpers.take_screenshot(self.driver, "login_page", browser_name)
                             custom_log().info(f"The title matched successfully with the value {home_page_title}")
                     else:
